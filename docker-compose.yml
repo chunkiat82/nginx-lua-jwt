@@ -1,0 +1,12 @@
+version: '2'
+
+
+services:
+  rayho-nginx:
+    build: ./
+    image: nginx-lua-jwt:latest
+    ports:
+      - "81:80"
+    volumes:
+      - ./guard.lua:/etc/nginx/lua/guard.lua
+      - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
